@@ -1,2 +1,5 @@
-# 1030510080_BS441_WebYazilimGelistirme
-This project developed for lesson 'BS441 Web Yazılım Geliştirme'
+Öğrenci Numarası: 1030510080
+
+Öğrenci Adı: Azad Yıldız
+
+Ders Adı: BS441 Web Yazılım Geliştirme
