@@ -1,0 +1,17 @@
+.container {
+    display: flex; /* yatay veya dikeyde hizalama icin */
+    flex-direction: column; /* yukaridan asagiya hizalama */
+    align-content: center; /* satirlari birbirinden ayirmak icin */
+    align-items: center; /* icindeki elemanlari dikeyde, yani y ekseninde hizalar. */
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 50%; 
+    align-items: center;
+}
+.heading {
+    font-size: 4em; /* responsive tasarimlar icin em ve rem degerler kullaniliyor. */
+}
+

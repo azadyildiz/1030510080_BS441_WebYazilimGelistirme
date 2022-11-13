@@ -1,5 +1,5 @@
-Öğrenci Numarası: 1030510080
+**Öğrenci Numarası:** 1030510080
 
-Öğrenci Adı: Azad Yıldız
+**Öğrenci Adı:** Azad Yıldız
 
-Ders Adı: BS441 Web Yazılım Geliştirme
+**Ders Adı:** BS441 Web Yazılım Geliştirme
