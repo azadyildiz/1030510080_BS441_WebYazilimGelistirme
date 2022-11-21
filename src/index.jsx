@@ -6,7 +6,7 @@ import ReactDOM from "react-dom";
 const App = () => {
 
     return (
-        <div>Ödev</div>
+        <div>For weekly commit.</div>
     )
 }
 
