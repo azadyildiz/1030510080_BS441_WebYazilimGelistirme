@@ -1,86 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+/************ 0 - ALL PAGES CSS START ************/
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -94,11 +15,13 @@ body {
     height: 100vh;
     user-select: none;
     overflow: hidden;
+    background-color: black;
 }
 body *{
     color: white;
     font-family: 'Press Start 2P', cursive;
     font-size: 16px;
+    transition: 0.6s;
 }
 
 h1 {
@@ -137,10 +60,6 @@ button {
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
 }
 
 button:hover {
@@ -181,10 +100,14 @@ button:hover {
     align-items: center;
 }
 
+/************ 0 - ALL PAGES CSS END ************/
+
+/************ 1 - HOMEPAGE CSS START ************/
+
 .homepage {
     width: 100%;
     height: 100%;
-    background-image: url('./assets/bg.gif');
+    background-image: url('./assets/homepage-bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -213,7 +136,6 @@ button:hover {
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    transition: 0.3s;
 }
 .info-bubble span{
     font-size: 0.7rem;
@@ -239,3 +161,134 @@ button:hover {
     opacity: 1;
     margin-left: 32px;
 }
+
+/************ 1 - HOMEPAGE CSS END ************/
+
+/************ 2 - GAMEPAGE CSS START ************/
+.gamePage{
+    width: 100%;
+    height: 100%;
+    background-image: url('./assets/gamepage-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.gamePage *{
+    color:black;
+}
+
+.popup-container{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup{
+    width: 700px;
+    min-height: 35%;
+    height: auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 16px 16px -4px rgba(255,255,255,0.35);
+    padding: 16px 32px;
+}
+.popup-weapons{
+    padding: 16px;
+    min-width: 128px;
+    cursor: pointer;
+    margin: 16px;
+    min-height: 128px;
+    justify-content: space-around;
+    border: 1px solid white;
+    border-radius: 8px;
+}
+.popup-weapons:hover{
+    transform: scale(1.05);
+    border: 1px solid lightgray;
+    box-shadow: 0px 16px 16px -4px rgba(0, 0, 0, 0.25);
+}
+
+.spacebar{
+    background-image: url('./assets/images/spacebar.png') ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    bottom: 64px;
+    width:240px;
+    height:57.5px;
+    animation: rotate 0.3s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: scale(1.0);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* WEAPON DESIGN START */
+
+#rock{
+    background-image: url('./assets/images/rock.png') ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#paper{
+    background-image: url('./assets/images/paper.png') ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#scissors{
+    background-image: url('./assets/images/scissors.png') ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#player .weapon-art{
+    transform: rotateY(180deg);
+}
+
+.weapon-art{
+    transition: 0.1s;
+}
+/* WEAPON DESIGN END */
+
+/* CHARACTER DESIGN START */
+.healthbar{
+    width:150px;
+    height:15px;
+    border: 2px solid #000;
+    border-radius: 8px;
+}
+.health{
+    height: 15px;
+    background: #008000;
+    border-radius: 6px;
+    transition: 0.1s;
+}
+
+.player-half-damage{
+    margin-right: -450px;
+}
+
+.player-max-damage{
+    margin-right: -900px;
+}
+
+.pc-half-damage{
+    margin-left: -450px;
+}
+
+.pc-max-damage{
+    margin-left: -900px;
+}
+
+/* CHARACTER DESIGN END */
