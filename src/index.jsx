@@ -1,53 +1,44 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import ReactDOM from "react-dom";
 
-const App = () => {
-    const [gamemodeCTRL,setGamemodeCTRL] = useState(false);
-    const [gamemode,setGamemode] = useState('');
-    function classicGameStart(){
-        setGamemodeCTRL(true);
-        setGamemode('classic');
-        console.log('Classic Game Started!')
+import Homepage from "./pages/Homepage.jsx";
+import Gamepage from "./pages/Gamepage";
 
+const App = () => {
+    const [gamemode,setGamemode] = useState(null);
+
+    // For fade effect
+    useEffect(() => {
+        document.querySelector('#root').style.opacity = 1;
+    })
+
+    // This func restarts app
+    function restartApp(){
+        document.querySelector('#root').style.opacity = 0;
+        setTimeout(() => {
+            setGamemode(null);
+        }, 600);
     }
-    function warGameStart(){
-        setGamemodeCTRL(true);
-        setGamemode('war');
-        console.log('War Game Started!')
+
+    // Game Starter function. When player choose a gamemode, this func. will work.
+    function handleGameStart(gamemode){
+        document.querySelector('#root').style.opacity = 0;
+        setTimeout(() => {
+            setGamemode(gamemode);
+        }, 600);
     }
-    if(gamemodeCTRL){
-        if(gamemode === 'classic'){
-            return(
-                <div></div>
-            )
-        }
-        else if(gamemode === 'war'){
-            return(
-                <div></div>
-            )
-        }
-        else{
-            console.log('ERROR: CANNOT FOUND GAME MODE.')
-        }
+    
+    // If player didnt choose a gamemode, Gamemode selector page will render.
+    if(gamemode !== null){
+        // Gamepage
+        return(
+            <Gamepage gamemode={gamemode} restartAppFunc={restartApp}/>
+        )
     }
     else{
+        // Homepage
         return (
-            <div className="homepage flex-start-col">
-                <h1 className="header">R & P & S : Last Fight</h1>
-                <div className="flex-cen-col select-mode-container">
-                    <h2>Welcome Back, Warrior.</h2>
-                    <h3>Choose Your Game Mode</h3>
-
-                    <div className="button-container">
-                        <button id="classicCustomButton" style={{width:'330px'}} onClick={classicGameStart}>Classic Game</button>
-                        <div className="info-bubble"><span style={{color:'red'}}>Your enemy is AI. </span>The classic rock paper scissors game you know.</div>
-                    </div>
-                    <div className="button-container">
-                        <button id="warCustomButton" style={{width:'330px'}} onClick={warGameStart}>War Game</button>
-                        <div className="info-bubble"><span style={{color:'red'}}>Your enemy is AI. </span>Pressing the <span style={{color:'deepskyblue'}}>Space</span> key inflicts damage to the enemy. But there is a trick, if you make the right matchup, you will inflict <span style={{color:'red'}}>1.5x damage.</span></div>
-                    </div>
-                </div>
-            </div>
+            <Homepage handleGameStart={handleGameStart}/>
         )
     }
 }
